@@ -1,2 +1,2 @@
 # ansi-pull-deploy
-Deploy ansible pull setup to hosts.
+Deploy ansible-pull setup to hosts.
