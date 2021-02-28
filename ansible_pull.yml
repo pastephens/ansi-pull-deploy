@@ -16,7 +16,7 @@
 ---
 
 - hosts: pull_mode_hosts
-  remote_user: root
+  #remote_user: root
 
   vars:
 
@@ -35,7 +35,8 @@
     # Repository to check out -- YOU MUST CHANGE THIS
     # repo must contain a local.yml file at top level
     #repo_url: git://github.com/sfromm/ansible-playbooks.git
-    repo_url: SUPPLY_YOUR_OWN_GIT_URL_HERE
+    #repo_url: SUPPLY_YOUR_OWN_GIT_URL_HERE
+    repo_url: git://github.com/pastephens/ansi-pull.git
 
   tasks:
 
@@ -49,8 +50,7 @@
       file: path={{workdir}} state=directory owner=root group=root mode=0751
 
     - name: Copy ansible inventory file to client
-      copy: src=/etc/ansible/hosts dest=/etc/ansible/hosts
-              owner=root group=root mode=0644
+      copy: src=hosts dest=/etc/ansible/hosts owner=root group=root mode=0644
 
     - name: Create crontab entry to clone/pull git repository
       template: src=templates/etc_cron.d_ansible-pull.j2 dest=/etc/cron.d/ansible-pull owner=root group=root mode=0644
