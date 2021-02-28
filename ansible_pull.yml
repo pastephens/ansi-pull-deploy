@@ -42,6 +42,9 @@
     - name: Install ansible
       yum: pkg=ansible state=installed
 
+    - name: Install git
+      yum: pkg=git state=installed
+
     - name: Create local directory to work from
       file: path={{workdir}} state=directory owner=root group=root mode=0751
 
