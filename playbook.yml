@@ -39,6 +39,9 @@
     #repo_url: SUPPLY_YOUR_OWN_GIT_URL_HERE
     repo_url: https://github.com/pastephens/ansi-pull.git
 
+    # Repository branch to be checked out
+    branch: 'feature/dev'
+
   tasks:
 
     - name: Install ansible
